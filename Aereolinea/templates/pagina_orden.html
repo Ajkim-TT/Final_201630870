@@ -1,0 +1,121 @@
+
+{% extends "Principal.html" %}
+
+{% block title %} Ordenar Vuelo {% endblock %}
+
+{% block content %}
+    <h1>
+        ORDENAR
+    </h1>
+    <p>
+        <form action = "/factura/" mehtod = 'GET'>
+            <p>CAJERO</p>
+            <input type="text" placeholder="{{request.user}}" >
+            <p>CLASE<p>
+            <div>
+                <input type="radio" id="1ra" name="clase" value="primera" required="required">
+                <label for="1ra">1ra</label>
+                </div>
+                <div>
+                    <input type="radio" id="2da" name="clase" value="segunda" required="required">
+                    <label for="2da">2da</label>
+                </div>
+                <div>
+                    <input type="radio" id="3ra" name="clase" value="tercera" required="required">
+                <label for="3ra">3ra</label><br>
+            </div>
+            <p>SERVICIOS<p><br>
+                <table border="1">
+                    <caption>Precios</caption>
+                    <tr>
+                        <th>Servicio/Clase</th>
+                        <th>Primera Clase</th>
+                        <th>Segunda Clase</th>
+                        <th>Tercera Clase</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for='chkComida'>Comida</label>
+                            <input type="checkbox" id="chkComida" onclick="document.getElementById('cant_com1').disabled=!this.checked;document.getElementById('cant_com2').disabled=!this.checked;document.getElementById('cant_com3').disabled=!this.checked;">
+                        </td>
+                        <td>
+                            <label for="cant_com1">#</label>
+                            <input type="number" id="cant_com1" name="cant_com1" min="0" max="100" disabled>
+                            xQ.50.00
+                        </td>
+                        <td>
+                            <label for="cant_com2">#</label>
+                            <input type="number" id="cant_com2" name="cant_com2" min="0" max="100" disabled>    
+                            xQ.40.00
+                        </td>
+                        <td>
+                            <label for="cant_com3">#</label>
+                            <input type="number" id="cant_com3" name="cant_com3" min="0" max="100" disabled>    
+                            xQ.25.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for='chkBebida'>Bebida</label>
+                            <input type="checkbox" id="chkBebida" onclick="document.getElementById('cant_beb1').disabled=!this.checked;document.getElementById('cant_beb2').disabled=!this.checked;document.getElementById('cant_beb3').disabled=!this.checked;">
+                        </td>
+                        <td>
+                            <label for="cant_beb1">#</label>
+                            <input type="number" id="cant_beb1" name="cant_beb1" min="0" max="100" disabled> 
+                            xQ.35.00
+                        </td>
+                        <td>
+                            <label for="cant_beb2">#</label>
+                            <input type="number" id="cant_beb2" name="cant_beb2" min="0" max="100" disabled> 
+                            xQ.25.00
+                        </td>
+                        <td>
+                            <label for="cant_beb3">#</label>
+                            <input type="number" id="cant_beb3" name="cant_beb3" min="0" max="100" disabled> 
+                            xQ.10.00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for='chkPelicula'>Pelicula</label>
+                            <input type="checkbox" id="chkPelicula" onclick="document.getElementById('cant_pel1').disabled=!this.checked;document.getElementById('cant_pel2').disabled=!this.checked;document.getElementById('cant_pel3').disabled=!this.checked;">
+                        </td>
+                        <td>
+                            <label for="cant_pel1">#</label>
+                            <input type="number" id="cant_pel1" name="cant_pel1" min="0" max="100" disabled> 
+                            xQ.70.00
+                        </td>
+                        <td>
+                            <label for="cant_pel2">#</label>
+                            <input type="number" id="cant_pel2" name="cant_pel2" min="0" max="100" disabled> 
+                            xQ.55.00
+                        </td>
+                        <td>
+                            <label for="cant_pel3">#</label>
+                            <input type="number" id="cant_pel3" name="cant_pel3" min="0" max="100" disabled> 
+                            xQ.25.00
+                        </td>
+                    </tr>
+                    </table>
+            <div id="lower">
+        
+                <input type="submit" value="Calcular">
+                <input type="reset" value="Limpiar">
+                
+                
+            </div>
+
+        </form>
+        <form method="GET" action="/historial/">
+            <input type="submit" value = "Reporte"></button>
+        </form>
+    
+    </p>
+    <script language="javascript">
+        function enableDisable(bEnable, textBoxID)
+        {
+            document.getElementById(textBoxID).disabled = !bEnable
+        }
+    </script>
+
+{% endblock %}

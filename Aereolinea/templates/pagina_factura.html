@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            FACTURA
+        </title>
+    </head>
+    <body>
+        La clase seleccionada es: {{classe}}
+        {% if NoCom1 %}
+        <p>{{NoCom1}} Comidas de primera clase Q 50.00</p>
+        {% endif %}
+        {% if NoCom2 %}
+        <p>{{NoCom2}} Comidas de segunda clase Q 40.00</p>
+        {% endif %}
+        {% if NoCom3 %}
+        <p>{{NoCom3}} Comidas de tercera clase Q 25.00</p>
+        {% endif %}
+        {% if NoBeb1 %}
+        <p>{{NoBeb1}} Bebidas de primera clase Q 35.00</p>
+        {% endif %}
+        {% if NoBeb2 %}
+        <p>{{NoBeb2}} Bebidas de segunda clase Q 25.00</p>
+        {% endif %}
+        {% if NoBeb3 %}
+        <p>{{NoBeb3}} Bebidas de tercera clase Q 10.00</p>
+        {% endif %}
+        {% if NoPel1 %}
+        <p>{{NoPel1}} Peliculas de primera clase Q 70.00</p>
+        {% endif %}
+        {% if NoPel2 %}
+        <p>{{NoPel2}} Peliculas de segunda clase Q 55.00</p>
+        {% endif %}
+        {% if NoPel3 %}
+        <p>{{NoPel3}} Peliculas de tercera clase Q 25.00</p>
+        {% endif %}
+        <p>El subtotal es:                  Q.{{Subtot}}</p>
+        <p>El descuento es:                 Q.{{Desc}}</p>
+        <p>El total es:                     Q.{{Total}}</p>
+        <p>
+            <form method="GET" action="/orden">
+                <button type="submit">Nueva Orden</button>
+            </form>
+            <form method="GET" action="/historial/">
+                <input type="submit" value = "Reporte"></button>
+            </form>
+        </p>
+    </body>
+    
+</html>

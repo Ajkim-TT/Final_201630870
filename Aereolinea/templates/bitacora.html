@@ -1,0 +1,49 @@
+{% extends "Principal.html" %}
+
+{% block title %} Historial {% endblock %}
+
+{% block content %}
+        {% if entradas %}
+            <p>
+                Entradas Encontradas: {{entradas|length}} Ordenes
+            </p>
+
+            <table border="1">
+                <caption>REGISTRO</caption>
+                <tr>
+                    <th>ID_ORDEN</th>
+                    <th>Clase</th>
+                    <th>No. Comida</th>
+                    <th>No. Bebida</th>
+                    <th>No. Pelicula</th>
+                    <th>No. Servicios</th>
+                    <th>Subtotal</th>
+                    <th>Descuento</th>
+                    <th>Total</th>
+                </tr>
+                {% for entrada in entradas %}
+                <tr>
+                    <td>{{entrada.id}}</td>
+                    <td> {{entrada.clase}} </td>
+                    <td>{{entrada.comida}}</td>
+                    <td>{{entrada.bebida}}</td>
+                    <td>{{entrada.pelicula}}</td>
+                    <td>{{entrada.servicios}}</td>
+                    <td> {{entrada.subtotal}}</td>
+                    <td>{{entrada.descuentoM}}</td>
+                    <td>{{entrada.total}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No hay registros</p>
+        {% endif %}
+        <form method="GET" action="/ordenar/">
+            <button type="submit">Nueva Orden</button>
+        </form>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="number" placeholder="Id del registro a eliminar">
+            <button type="submit">BORRAR REGISTROS</button>
+        </form>
+{% endblock %}

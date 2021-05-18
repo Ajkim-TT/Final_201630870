@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF -8">
+        <title> 
+            {% block title %} 
+            {% endblock %}
+        </title>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+            body{
+                font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+            }
+            #header{
+                margin: auto;
+                width: 900px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            ul, ol{
+                list-style: none;
+            }
+            .menu li a{
+                background-color:rgb(121, 15, 107);
+                text-decoration: none;
+                color: white;
+                padding: 15px 30px;
+                display: block;
+            }
+            .menu > li{
+                float:left;
+            }
+            .menu li p{
+                background-color: rgb(99, 11, 87);
+                text-decoration: none;
+                color: rgb(143, 162, 197);
+                padding: 15px 30px;
+                display: block;
+            }
+            
+            .menu li a:hover{
+                background-color: rgb(14, 2, 49);
+            }
+            .menu li ul{
+                display:none;
+                position: absolute;
+                min-width: 130px;
+            }
+            .menu li:hover > ul{
+                display: block;
+            }
+
+            .menu li ul li{
+                position: relative;
+            }
+            .menu li ul li ul {
+                right: -130px;
+                top:0px;
+            }
+            .menu li ul li ul:hover {
+                background-color: rgb(44, 14, 71);
+            }
+
+            input{
+                background-color: rgb(168, 88, 88);
+            }
+        </style>
+
+    </head>
+    <body style="background: url('file:///C:/Users/AjkimT/Downloads/U/Code/ProyectosDjango/DockerDjango/DockerDjango/templates/usac.jpg')">
+        {% include "navbar.html" %}
+        <p>
+
+            <br>
+            <br>
+            <br>
+            <div>
+                {% block content %} 
+                {% endblock %}
+            </div>
+            
+        </p>
+    </body>
+</html>

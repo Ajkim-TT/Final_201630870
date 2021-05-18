@@ -1,0 +1,25 @@
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:navy;
+}
+.menu{
+    list-style: none;
+    padding: 0;
+    background-color:rgb(83, 5, 73);
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+.menu li a{
+    text-decoration: dotted;
+    color: white;
+    padding: 20px;
+    display: block;
+}
+.menu li{
+    display: inline-block;
+    text-align: center;
+}
+.menu li a:hover{
+    background-color: rgb(5, 80, 83);
+}

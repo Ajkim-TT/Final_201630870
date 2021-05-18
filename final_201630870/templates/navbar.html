@@ -1,0 +1,20 @@
+<html>
+    <style type="text/css">
+
+    </style>
+    <body>
+        <div id="header">
+            <ul class="menu">
+                <li><a href="{% url 'principal' %}">Inicio</a> </li>
+                <li><a href="">Aereolinea</a>
+                    <ul>
+                        <li><a href="{% url 'ordenar' %}">Vuelos</a>  </li>
+                        <li><a href="{% url 'historial' %}">Facturas</a> </li>
+                    </ul>
+                </li>
+                <li><p>Bienvenido {{request.user}} </p></li>
+                <li><a href="{% url 'logout' %}">Salir</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

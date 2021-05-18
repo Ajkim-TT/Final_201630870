@@ -1,0 +1,47 @@
+<html>
+    <body>
+        {% include "superior/barra.html" %}
+        <h1 style="color:blueviolet;">
+            ESTA ES LA PRIMER PLANTILLA HTML
+        </h1>
+        <h2>
+            {# ESTO ES SOLO UNA PRUEBA #}
+            {% comment %} Este es
+                un comentario de varias lineas
+            {% endcomment %} 
+            {% if nombre_persona == "Juan"%}
+                <p>El curso lo imparte el profesor titular</p>
+            {% else %}
+                <p>El curso lo imparte otro profesor</p>
+            {% endif %}
+        </h2>
+        <h3>
+            Esta es un documento en otra carpeta aparte.
+        </h3>
+        <p>El nombre de la persona es: {{nombre_persona.capitalize}} , {{apellido_persona.upper}}</p>
+        <p>El signo zodiacal de la persona es: {{signo_persona}}</p>
+        <p>El d&iacute;a y la hora son: {{momento.day}}/{{momento.month}}/{{momento.year}}</p>
+        <p style = "font-size:larger"><strong>Temas del CURSO</strong></p>
+        <p>
+            {% if temas %}
+                {% for tem in temas %}
+                <p>{{tem|lower}}</p> 
+                {% endfor %}
+            {% else %}
+                <p style="display: grid;">NO HAY TEMAS NUEVOS</p>
+            {% endif %}
+        </p>
+        
+        
+        <p>{{temas.1}}</p>
+
+        <p>
+            <ul>
+                {% for tem in temas %}
+                <li>{{tem|upper}}</li> 
+                 {% endfor %}
+            </ul>
+        </p>
+    </body>
+
+</html>
